@@ -2,9 +2,29 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="爱的印象派·人生画展 - A digital birthday card">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="爱的印象派·人生画展 - A digital birthday card for my beloved Mr. Brown Bear">
+    <meta name="theme-color" content="#e8ddd4">
     <title>爱的印象派·人生画展 | Impression of Love Exhibition</title>
+    
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="爱的印象派·人生画展">
+    <meta property="og:description" content="Impression of Love Exhibition - A digital birthday card curated with love 💕">
+    <meta property="og:image" content="assets/cover_front.PNG">
+    <meta property="og:image:width" content="1080">
+    <meta property="og:image:height" content="1920">
+    <meta property="og:image:alt" content="爱的印象派·人生画展 - Impression of Love Exhibition">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="爱的印象派·人生画展">
+    <meta name="twitter:description" content="Impression of Love Exhibition - A digital birthday card curated with love 💕">
+    <meta name="twitter:image" content="assets/cover_front.PNG">
+    
+    <!-- Favicon (Emoji) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐻</text></svg>">
+    <link rel="apple-touch-icon" href="assets/cover_front.PNG">
     
     <!-- Google Fonts: Noto Serif SC for Chinese, Playfair Display for English -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,23 +35,94 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="assets/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Music Toggle FAB (Floating Action Button) -->
+    <button class="music-fab" id="musicToggle" aria-label="Toggle background music">
+        <span class="music-icon">🎵</span>
+        <span class="music-waves">
+            <span class="wave"></span>
+            <span class="wave"></span>
+            <span class="wave"></span>
+        </span>
+    </button>
+    
+    <!-- Click Hint (shown initially) -->
+    <div class="click-hint" id="clickHint">
+        <span class="hint-icon">👆</span>
+        <span class="hint-text">点击打开</span>
+    </div>
+    
     <!-- Main Card Container -->
     <main class="card-container">
         <!-- Card Body Wrapper -->
         <div class="card-body">
             <!-- Front Cover (visible when card is closed) -->
             <div class="cover-front">
-                <img src="assets/cover_front.PNG" alt="爱的印象派·人生画展 - Impression of Love Exhibition">
+                <!-- Background image set via CSS -->
+                
+                <!-- Text Overlay Container -->
+                <div class="cover-content">
+                    <!-- Header Section -->
+                    <header class="cover-header">
+                        <h1 class="cover-title">爱的印象派 · 人生画展</h1>
+                        <p class="cover-subtitle">Impression of Love Exhibition</p>
+                        <p class="cover-dedication">致我最爱的布朗熊先生</p>
+                    </header>
+                    
+                    <!-- VIP Badge Section -->
+                    <footer class="cover-footer">
+                        <div class="vip-badge">
+                            <span class="vip-label">VIP</span>
+                            <div class="vip-details">
+                                <p><span class="vip-icon">📅</span> 日期：1/26</p>
+                                <p><span class="vip-icon">🎫</span> 身份：终身 VIP 荣誉馆长</p>
+                            </div>
+                        </div>
+                        <div class="cover-sparkle">✦</div>
+                    </footer>
+                </div>
             </div>
             
             <!-- Inside Left Page (revealed when card opens) -->
             <div class="inside-left">
-                <img src="assets/inside_left.PNG" alt="In every moment, a masterpiece of love.">
+                <!-- Background image set via CSS -->
+                <div class="inside-left-content">
+                    <p class="inside-left-quote">In every moment,<br>a masterpiece of love.</p>
+                    <div class="inside-left-sparkle">✦</div>
+                </div>
             </div>
             
             <!-- Inside Right Page (the main message area) -->
             <div class="inside-right">
-                <img src="assets/inside_right.PNG" alt="Birthday message">
+                <article class="letter">
+                    <!-- Greeting -->
+                    <header class="letter-greeting">亲爱的老公：</header>
+                    
+                    <!-- Opening -->
+                    <p class="letter-opening">生日快乐！</p>
+                    
+                    <!-- Body -->
+                    <div class="letter-body">
+                        <p>欢迎来到为你特设的这场"人生画展"。我常常觉得，你就像莫奈画笔下的光，虽然捉摸不透，却实实在在地温暖着我整个世界。</p>
+                        
+                        <p>你也像画里那只布朗熊。平时话不多，总是顶着一张酷酷的扑克脸，但无论是在熙攘的车站，还是宁静的桥上，你总是默默地站在我身边，给我最坚实的依靠，包容我所有的小脾气。</p>
+                        
+                        <p>谢谢你，我的布朗熊先生。只要你在，我们生活的每一帧，就都是最美的世界名画。</p>
+                    </div>
+                    
+                    <!-- Closing Wish -->
+                    <p class="letter-wish">愿你新的一岁，眼里有光，心中有爱，身边有我。</p>
+                    
+                    <!-- Signature -->
+                    <footer class="letter-signature">
+                        爱你的老婆（可妮兔）
+                    </footer>
+                </article>
             </div>
             
             <!-- Back Cover (optional, for complete card experience) -->

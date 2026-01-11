@@ -15,20 +15,39 @@ The card is designed as a virtual art exhibition VIP invitation, featuring:
 
 ```mermaid
 flowchart LR
-    subgraph Closed
-        A[Cover Front]
+    subgraph State0["封面 (1页)"]
+        A["Cover Front"]
     end
     
-    subgraph Open
-        B[Inside Left] --- C[Inside Right]
+    subgraph State1["内页 (2页)"]
+        direction LR
+        B["Inside Left"] --- C["Inside Right"]
     end
     
-    subgraph Back
-        D[Cover Back]
+    subgraph State2["封底 (1页)"]
+        D["Cover Back"]
     end
     
-    A -->|Open| B
-    C -->|Flip| D
+    A -->|"点击封面<br/>沿左边缘翻开"| State1
+    State1 -->|"点击左页<br/>沿中缝合上"| State0
+    State1 -->|"点击右页<br/>沿中缝合上"| State2
+    State2 -->|"点击封底<br/>沿右边缘翻开"| State1
+```
+
+### Visual Layout
+
+```
+STATE 0 - 封面 (1页)          STATE 1 - 内页 (2页)           STATE 2 - 封底 (1页)
+┌─────────────┐               ┌─────────────┬─────────────┐  ┌─────────────┐
+│             │               │             │             │  │             │
+│   COVER     │  ──翻开──►   │   INSIDE    │   INSIDE    │  ◄──翻开──   │   COVER     │
+│   FRONT     │  (左边缘)     │    LEFT     │   RIGHT     │  (右边缘)    │    BACK     │
+│             │               │             │             │  │             │
+└─────────────┘               └─────────────┴─────────────┘  └─────────────┘
+      ▲                             │               │                 ▲
+      │                        点击左页         点击右页              │
+      │                        沿中缝合上       沿中缝合上             │
+      └────────────────────────────┘               └──────────────────┘
 ```
 
 ## Pages Description
