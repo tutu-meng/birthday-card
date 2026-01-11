@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Birthday Card Styles
+   A 3D folding card with Monet-inspired aesthetics
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS Custom Properties (Variables)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Typography */
+    --font-chinese: 'Noto Serif SC', serif;
+    --font-english: 'Playfair Display', serif;
+    
+    /* Colors - Monet-inspired palette */
+    --color-cream: #faf8f5;
+    --color-gold: #c9a962;
+    --color-sage: #8fa68e;
+    --color-water-lily: #e8ddd4;
+    --color-shadow: rgba(0, 0, 0, 0.15);
+    
+    /* Card dimensions */
+    --card-width: 400px;
+    --card-height: 600px;
+    
+    /* Animation timing */
+    --transition-duration: 0.8s;
+    --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Base Styles
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-chinese);
+    background: linear-gradient(135deg, var(--color-water-lily) 0%, var(--color-cream) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   Card Container
+   -------------------------------------------------------------------------- */
+.card-container {
+    perspective: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   Card Body
+   -------------------------------------------------------------------------- */
+.card-body {
+    position: relative;
+    width: var(--card-width);
+    height: var(--card-height);
+    transform-style: preserve-3d;
+}
+
+/* --------------------------------------------------------------------------
+   Card Faces - Base Styles
+   -------------------------------------------------------------------------- */
+.cover-front,
+.inside-left,
+.inside-right,
+.cover-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--color-shadow);
+}
+
+.cover-front img,
+.inside-left img,
+.inside-right img,
+.cover-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Front Cover
+   -------------------------------------------------------------------------- */
+.cover-front {
+    z-index: 4;
+    transform-origin: left center;
+}
+
+/* --------------------------------------------------------------------------
+   Inside Left Page
+   -------------------------------------------------------------------------- */
+.inside-left {
+    z-index: 3;
+    transform-origin: right center;
+}
+
+/* --------------------------------------------------------------------------
+   Inside Right Page
+   -------------------------------------------------------------------------- */
+.inside-right {
+    z-index: 2;
+    background-color: var(--color-cream);
+}
+
+/* --------------------------------------------------------------------------
+   Back Cover
+   -------------------------------------------------------------------------- */
+.cover-back {
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+/* --------------------------------------------------------------------------
+   Typography Classes (for future use)
+   -------------------------------------------------------------------------- */
+.text-chinese {
+    font-family: var(--font-chinese);
+}
+
+.text-english {
+    font-family: var(--font-english);
+    font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    :root {
+        --card-width: 320px;
+        --card-height: 480px;
+    }
+    
+    body {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --card-width: 280px;
+        --card-height: 420px;
+    }
+}
