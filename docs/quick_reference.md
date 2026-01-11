@@ -61,9 +61,7 @@
 - `.music-icon` - Music note emoji icon
 - `.music-waves` - Sound wave animation container
 - `.wave` - Individual animated wave bar
-- `.click-hint` - Initial click instruction overlay
-- `.hint-icon` - Tap finger emoji
-- `.hint-text` - "点击打开" text
+- `.click-hint` - Pulsing light dot to guide user to click
 
 ## CSS Variables
 

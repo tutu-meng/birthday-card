@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Fixed - 2026-01-11
+- **Replace click hint bubble with pulsing light dot**
+  - Removed "👆 点击打开" text bubble
+  - Added elegant golden pulsing light dot in center of card
+  - Includes ripple animation effect for subtle guidance
+
 - **Hide overlaid text on cover-front and inside-left**
   - Text already exists in the images, no need to display
   - HTML kept for accessibility/SEO (screen reader friendly)
