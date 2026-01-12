@@ -82,6 +82,8 @@ body {
     height: var(--card-height);
     transform-style: preserve-3d;
     transition: width var(--transition-duration) var(--transition-easing);
+    /* Clip content outside bounds (hide inside-right when closed) */
+    overflow: hidden;
 }
 
 /* When open, double the width to show two pages */
