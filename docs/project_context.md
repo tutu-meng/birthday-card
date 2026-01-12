@@ -52,22 +52,22 @@ STATE 0 - 封面 (1页)          STATE 1 - 内页 (2页)           STATE 2 - 封
 
 ## Pages Description
 
-### 1. Cover Front (`cover_front.PNG`)
+### 1. Cover Front (`cover_front.webp`)
 - Museum gallery scene
 - Title: 爱的印象派·人生画展 / Impression of Love Exhibition
 - Subtitle: 致我最爱的布朗熊先生
 - VIP badge with date 1/26 and "终身VIP荣誉馆长"
 
-### 2. Inside Left (`inside_left.PNG`)
+### 2. Inside Left (`inside_left.webp`)
 - Monet's Water Lilies & Japanese Bridge inspired scene
 - Brown & Cony on the bridge
 - Quote: "In every moment, a masterpiece of love."
 
-### 3. Inside Right (`inside_right.PNG`)
+### 3. Inside Right (`inside_right.webp`)
 - Birthday letter in Chinese
 - Personal message from wife (Cony) to husband (Brown)
 
-### 4. Cover Back (`cover_back.PNG`)
+### 4. Cover Back (`cover_back.webp`)
 - Beach sunset impressionist scene
 - Text: "Curated with Love." & "愿我们，日升月落都在一起。"
 - Claude Monet signature style

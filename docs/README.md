@@ -30,10 +30,10 @@ birthday-card/
 ├── style.css           # Styles
 ├── script.js           # Interactivity
 ├── assets/             # Images
-│   ├── cover_front.PNG
-│   ├── cover_back.PNG
-│   ├── inside_left.PNG
-│   └── inside_right.PNG
+│   ├── cover_front.webp
+│   ├── cover_back.webp
+│   ├── inside_left.webp
+│   └── inside_right.webp
 └── docs/               # Documentation
     ├── README.md
     ├── project_context.md

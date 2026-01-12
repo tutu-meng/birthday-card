@@ -137,7 +137,7 @@ body {
     cursor: pointer;
     
     /* Background image */
-    background-image: url('assets/cover_front.PNG');
+    background-image: url('assets/cover_front.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -267,7 +267,7 @@ body {
     transition: opacity 0.3s ease;
     
     /* Background image */
-    background-image: url('assets/inside_left.PNG');
+    background-image: url('assets/inside_left.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -329,7 +329,7 @@ body {
     left: var(--card-width);
     
     /* Background image */
-    background-image: url('assets/inside_right.PNG');
+    background-image: url('assets/inside_right.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

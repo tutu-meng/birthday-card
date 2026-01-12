@@ -94,10 +94,10 @@
 
 | File | Description |
 |------|-------------|
-| `cover_front.PNG` | Museum gallery VIP invitation |
-| `inside_left.PNG` | Water lilies garden scene |
-| `inside_right.PNG` | Chinese birthday letter |
-| `cover_back.PNG` | Beach sunset scene |
+| `cover_front.webp` | Museum gallery VIP invitation |
+| `inside_left.webp` | Water lilies garden scene |
+| `inside_right.webp` | Chinese birthday letter |
+| `cover_back.webp` | Beach sunset scene |
 | `bgm.mp3` | Background music |
 
 ## Commands
@@ -125,7 +125,7 @@ npx serve
 The card includes Open Graph and Twitter Card meta tags for rich link previews:
 - `og:title` - 爱的印象派·人生画展
 - `og:description` - Impression of Love Exhibition
-- `og:image` - cover_front.PNG
+- `og:image` - cover_front.webp
 - `twitter:card` - summary_large_image
 
 ## Favicon
