@@ -87,11 +87,9 @@ body {
     overflow: hidden;
 }
 
-/* When open, double the width and shift left so spine stays centered */
+/* When open, double the width to show two pages */
 .card-body.open {
     width: calc(var(--card-width) * 2);
-    /* Shift left by half a page so the spine (original left edge) stays centered */
-    transform: translateX(calc(var(--card-width) * -0.5));
 }
 
 /* When showing back cover, return to single page width */
@@ -137,7 +135,8 @@ body {
     transform-origin: left center;
     transform-style: preserve-3d;
     backface-visibility: hidden;
-    transition: transform var(--transition-duration) var(--transition-easing);
+    transition: transform var(--transition-duration) var(--transition-easing),
+                left var(--transition-duration) var(--transition-easing);
     cursor: pointer;
     
     /* Background image */
@@ -454,10 +453,10 @@ body {
    Card body expands to 2 pages.
    -------------------------------------------------------------------------- */
 .card-body.open .cover-front {
-    /* Flip the cover to the left (around left edge) */
+    /* Move to spine position and flip to the left */
+    left: var(--card-width);
     transform: rotateY(-180deg);
     z-index: 1;
-    /* No opacity change - let the 3D flip hide it naturally */
 }
 
 /* Shadow on inside-left when open */
