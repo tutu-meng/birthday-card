@@ -263,19 +263,13 @@ body {
     z-index: 2;
     left: 0;
     cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    /* Always visible - cover-front hides it when closed via z-index */
     
     /* Background image */
     background-image: url('assets/inside_left.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-/* Show inside-left when open */
-.card-body.open .inside-left {
-    opacity: 1;
 }
 
 /* Hide the img tag since we're using background-image */
@@ -344,15 +338,8 @@ body {
     transform-style: preserve-3d;
     backface-visibility: hidden;
     transition: transform var(--transition-duration) var(--transition-easing),
-                left var(--transition-duration) var(--transition-easing),
-                opacity 0.3s ease;
+                left var(--transition-duration) var(--transition-easing);
     cursor: pointer;
-    opacity: 0;
-}
-
-/* Show inside-right when open */
-.card-body.open .inside-right {
-    opacity: 1;
 }
 
 /* Hide HTML content - using background image instead */
@@ -446,10 +433,8 @@ body {
     transform-origin: right center;
     transform-style: preserve-3d;
     backface-visibility: hidden;
-    transition: transform var(--transition-duration) var(--transition-easing),
-                opacity 0.3s ease;
+    transition: transform var(--transition-duration) var(--transition-easing);
     cursor: pointer;
-    opacity: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -461,7 +446,7 @@ body {
     /* Flip the cover to the left (around left edge) */
     transform: rotateY(-180deg);
     z-index: 1;
-    opacity: 0;
+    /* No opacity change - let the 3D flip hide it naturally */
 }
 
 /* Shadow on inside-left when open */
@@ -483,26 +468,14 @@ body {
    Inside-right flips around LEFT edge (spine), revealing back cover.
    Card body shrinks to 1 page.
    -------------------------------------------------------------------------- */
-/* Hide inside-left when showing back */
-.card-body.show-back .inside-left {
-    opacity: 0;
-}
-
-/* Inside-right flips to the right, goes off-screen */
+/* Inside-right flips to the right (around left edge / spine) */
 .card-body.show-back .inside-right {
     transform: rotateY(180deg);
-    opacity: 0;
 }
 
 /* Show cover-back */
 .card-body.show-back .cover-back {
     z-index: 5;
-    opacity: 1;
-}
-
-/* Keep cover-front hidden in back state */
-.card-body.show-back .cover-front {
-    opacity: 0;
 }
 
 /* --------------------------------------------------------------------------

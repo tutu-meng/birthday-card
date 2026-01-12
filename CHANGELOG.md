@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Fixed - 2026-01-11
+- **Fix page flip animation - use true 3D transform instead of opacity fade**
+  - Cover-front now properly flips with rotateY instead of fading out
+  - Uses backface-visibility: hidden for natural page hiding
+  - Removed opacity transitions for cleaner 3D effect
+
 - **Remove auto-play music on card open**
   - Music now only plays via manual control (FAB button or M key)
 
