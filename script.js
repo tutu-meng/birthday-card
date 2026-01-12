@@ -137,10 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
         }
         
-        // Play music on first open
-        if (oldState === 0 && newState === 1 && !isMusicPlaying && bgMusic) {
-            attemptPlayMusic();
-        }
     }
 
     // ==========================================================================

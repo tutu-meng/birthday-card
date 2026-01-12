@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Fixed - 2026-01-11
+- **Remove auto-play music on card open**
+  - Music now only plays via manual control (FAB button or M key)
+
 - **Remove click hint light dot**
   - Removed pulsing light dot - not needed
 
