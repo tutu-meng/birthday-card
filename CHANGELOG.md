@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Fixed - 2026-01-11
+- **Add background music (bgm.mp3)**
+  - Updated audio source to use `assets/bgm.mp3`
+
 - **Replace click hint bubble with pulsing light dot**
   - Removed "👆 点击打开" text bubble
   - Added elegant golden pulsing light dot in center of card

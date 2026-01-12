@@ -98,7 +98,7 @@
 | `inside_left.PNG` | Water lilies garden scene |
 | `inside_right.PNG` | Chinese birthday letter |
 | `cover_back.PNG` | Beach sunset scene |
-| `music.mp3` | Background music (user-provided) |
+| `bgm.mp3` | Background music |
 
 ## Commands
 
