@@ -131,12 +131,11 @@ body {
 .cover-front {
     z-index: 4;
     left: 0;
-    /* Flip around the left edge (the spine) */
+    /* Flip around the left edge */
     transform-origin: left center;
     transform-style: preserve-3d;
     backface-visibility: hidden;
-    transition: transform var(--transition-duration) var(--transition-easing),
-                left var(--transition-duration) var(--transition-easing);
+    transition: transform var(--transition-duration) var(--transition-easing);
     cursor: pointer;
     
     /* Background image */
@@ -265,13 +264,16 @@ body {
 
 /* --------------------------------------------------------------------------
    Inside Left Page - Left page when book is open
-   Behind cover-front. Visible when cover-front flips open.
+   Compresses toward the spine (right edge) when closing.
    -------------------------------------------------------------------------- */
 .inside-left {
     z-index: 2;
     left: 0;
     cursor: pointer;
-    /* Always visible - cover-front hides it when closed via z-index */
+    /* Collapse toward spine (right edge) */
+    transform-origin: right center;
+    transform: scaleX(0);
+    transition: transform var(--transition-duration) var(--transition-easing);
     
     /* Background image */
     background-image: url('assets/inside_left.webp');
@@ -323,7 +325,7 @@ body {
 
 /* --------------------------------------------------------------------------
    Inside Right Page - Right page when book is open
-   Positioned on the right. Flips around LEFT edge (spine) to reveal back cover.
+   Compresses toward the spine (left edge) when closing.
    -------------------------------------------------------------------------- */
 .inside-right {
     z-index: 3;
@@ -341,12 +343,12 @@ body {
         inset 15px 0 25px -10px rgba(0, 0, 0, 0.15),
         0 10px 30px var(--color-shadow);
     
-    /* Flip around left edge (the center spine) */
+    /* Collapse toward spine (left edge) */
     transform-origin: left center;
+    transform: scaleX(0);
     transform-style: preserve-3d;
     backface-visibility: hidden;
-    transition: transform var(--transition-duration) var(--transition-easing),
-                left var(--transition-duration) var(--transition-easing);
+    transition: transform var(--transition-duration) var(--transition-easing);
     cursor: pointer;
 }
 
@@ -453,21 +455,22 @@ body {
    Card body expands to 2 pages.
    -------------------------------------------------------------------------- */
 .card-body.open .cover-front {
-    /* Move to spine position and flip to the left */
-    left: var(--card-width);
+    /* Flip to the left around left edge */
     transform: rotateY(-180deg);
     z-index: 1;
 }
 
-/* Shadow on inside-left when open */
+/* Expand inside-left when open */
 .card-body.open .inside-left {
+    transform: scaleX(1);
     box-shadow: 
         inset -15px 0 25px -10px rgba(0, 0, 0, 0.15),
         0 10px 30px var(--color-shadow);
 }
 
-/* Shadow on inside-right when open */
+/* Expand inside-right when open */
 .card-body.open .inside-right {
+    transform: scaleX(1);
     box-shadow: 
         inset 15px 0 25px -10px rgba(0, 0, 0, 0.15),
         0 10px 30px var(--color-shadow);
@@ -480,7 +483,7 @@ body {
    -------------------------------------------------------------------------- */
 /* Inside-right flips to the right (around left edge / spine) */
 .card-body.show-back .inside-right {
-    transform: rotateY(180deg);
+    transform: scaleX(1) rotateY(180deg);
 }
 
 /* Show cover-back - flip to visible (0deg) */
