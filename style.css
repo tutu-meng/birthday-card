@@ -327,7 +327,7 @@ body {
 
 /* --------------------------------------------------------------------------
    Inside Right Page - Right page when book is open
-   Collapses toward spine (left edge) when closing.
+   Flips toward spine (left edge) when closing.
    -------------------------------------------------------------------------- */
 .inside-right {
     z-index: 3;
@@ -345,9 +345,9 @@ body {
         inset 15px 0 25px -10px rgba(0, 0, 0, 0.15),
         0 10px 30px var(--color-shadow);
     
-    /* Collapse toward spine (left edge) - no gap with inside-left */
+    /* Flip around spine (left edge) */
     transform-origin: left center;
-    transform: scaleX(0);
+    transform: rotateY(180deg);
     transform-style: preserve-3d;
     backface-visibility: hidden;
     transition: transform var(--transition-duration) var(--transition-easing);
@@ -470,9 +470,9 @@ body {
         0 10px 30px var(--color-shadow);
 }
 
-/* Expand inside-right when open */
+/* Flip inside-right open */
 .card-body.open .inside-right {
-    transform: scaleX(1);
+    transform: rotateY(0deg);
     box-shadow: 
         inset 15px 0 25px -10px rgba(0, 0, 0, 0.15),
         0 10px 30px var(--color-shadow);
@@ -483,9 +483,9 @@ body {
    Inside-right flips around LEFT edge (spine), revealing back cover.
    Card body shrinks to 1 page.
    -------------------------------------------------------------------------- */
-/* Inside-right collapses when showing back cover */
+/* Inside-right flips when showing back cover */
 .card-body.show-back .inside-right {
-    transform: scaleX(0);
+    transform: rotateY(180deg);
 }
 
 /* Show cover-back - flip to visible (0deg) */
