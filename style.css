@@ -449,6 +449,11 @@ body {
     cursor: pointer;
     /* Default: flipped to the left (hidden behind inside-right) */
     transform: rotateY(-180deg);
+    
+    /* Spine shadow on the right edge */
+    box-shadow: 
+        inset -8px 0 15px -5px rgba(0, 0, 0, 0.3),
+        0 10px 30px var(--color-shadow);
 }
 
 /* --------------------------------------------------------------------------
