@@ -25,8 +25,8 @@
     --card-height: calc(var(--card-width) * 16 / 9);
     --card-max-height: 85vh;
     
-    /* Animation timing */
-    --transition-duration: 1.2s;
+    /* Animation timing - faster for more realistic flip */
+    --transition-duration: 0.6s;
     --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
     
     /* 3D Scene - adjusted for mobile */
