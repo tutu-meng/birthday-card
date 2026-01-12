@@ -81,14 +81,17 @@ body {
     width: var(--card-width);
     height: var(--card-height);
     transform-style: preserve-3d;
-    transition: width var(--transition-duration) var(--transition-easing);
+    transition: width var(--transition-duration) var(--transition-easing),
+                transform var(--transition-duration) var(--transition-easing);
     /* Clip content outside bounds (hide inside-right when closed) */
     overflow: hidden;
 }
 
-/* When open, double the width to show two pages */
+/* When open, double the width and shift left so spine stays centered */
 .card-body.open {
     width: calc(var(--card-width) * 2);
+    /* Shift left by half a page so the spine (original left edge) stays centered */
+    transform: translateX(calc(var(--card-width) * -0.5));
 }
 
 /* When showing back cover, return to single page width */
@@ -130,12 +133,11 @@ body {
 .cover-front {
     z-index: 4;
     left: 0;
-    /* Flip around the left edge */
+    /* Flip around the left edge (the spine) */
     transform-origin: left center;
     transform-style: preserve-3d;
     backface-visibility: hidden;
-    transition: transform var(--transition-duration) var(--transition-easing),
-                opacity 0.3s ease;
+    transition: transform var(--transition-duration) var(--transition-easing);
     cursor: pointer;
     
     /* Background image */
@@ -143,6 +145,11 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
+    /* Spine shadow on the left edge */
+    box-shadow: 
+        inset 8px 0 15px -5px rgba(0, 0, 0, 0.3),
+        0 10px 30px var(--color-shadow);
 }
 
 /* Hide the img tag since we're using background-image */
