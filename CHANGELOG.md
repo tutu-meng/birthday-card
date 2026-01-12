@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Fixed - 2026-01-11
+- **Remove click hint light dot**
+  - Removed pulsing light dot - not needed
+
 - **Switch from PNG to WebP for faster loading**
   - All images now use .webp format
   - Removed PNG files to reduce repository size

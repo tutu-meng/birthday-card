@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const coverBack = document.querySelector('.cover-back');
     const musicToggle = document.getElementById('musicToggle');
     const bgMusic = document.getElementById('bgMusic');
-    const clickHint = document.getElementById('clickHint');
 
     // ==========================================================================
     // State Management
@@ -205,16 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function markInteraction() {
         hasUserInteracted = true;
-        hideClickHint();
-    }
-
-    /**
-     * Hide the click hint
-     */
-    function hideClickHint() {
-        if (clickHint) {
-            clickHint.classList.add('hidden');
-        }
     }
 
     // ==========================================================================
@@ -318,7 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Go forward through states
                 event.preventDefault();
                 hasUserInteracted = true;
-                hideClickHint();
                 if (cardState < 2) {
                     setCardState(cardState + 1);
                 }
@@ -327,7 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Go backward through states
                 event.preventDefault();
                 hasUserInteracted = true;
-                hideClickHint();
                 if (cardState > 0) {
                     setCardState(cardState - 1);
                 }
@@ -337,7 +324,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Toggle between closed and open
                 event.preventDefault();
                 hasUserInteracted = true;
-                hideClickHint();
                 if (cardState === 0) {
                     setCardState(1);
                 } else {

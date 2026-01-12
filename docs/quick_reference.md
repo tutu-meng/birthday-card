@@ -25,7 +25,6 @@
 ### State Classes
 - `.open` - Add to `.card-body` to flip the card open
 - `.playing` - Add to `.music-fab` when music is playing
-- `.hidden` - Add to `.click-hint` to hide it
 
 ### Typography Classes
 - `.text-chinese` - Chinese font
@@ -61,7 +60,6 @@
 - `.music-icon` - Music note emoji icon
 - `.music-waves` - Sound wave animation container
 - `.wave` - Individual animated wave bar
-- `.click-hint` - Pulsing light dot to guide user to click
 
 ## CSS Variables
 
