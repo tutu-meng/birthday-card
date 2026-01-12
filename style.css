@@ -327,7 +327,7 @@ body {
 
 /* --------------------------------------------------------------------------
    Inside Right Page - Right page when book is open
-   Collapses from left to right when closing.
+   Collapses toward spine (left edge) when closing.
    -------------------------------------------------------------------------- */
 .inside-right {
     z-index: 3;
@@ -345,8 +345,8 @@ body {
         inset 15px 0 25px -10px rgba(0, 0, 0, 0.15),
         0 10px 30px var(--color-shadow);
     
-    /* Collapse toward right edge (left side disappears first) */
-    transform-origin: right center;
+    /* Collapse toward spine (left edge) - no gap with inside-left */
+    transform-origin: left center;
     transform: scaleX(0);
     transform-style: preserve-3d;
     backface-visibility: hidden;
