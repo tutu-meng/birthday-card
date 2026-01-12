@@ -429,7 +429,7 @@ body {
    -------------------------------------------------------------------------- */
 .cover-back {
     z-index: 1;
-    /* Initially at left:0, shown when in back state */
+    /* Initially at left:0 */
     left: 0;
     /* Flip around right edge when opening */
     transform-origin: right center;
@@ -437,6 +437,8 @@ body {
     backface-visibility: hidden;
     transition: transform var(--transition-duration) var(--transition-easing);
     cursor: pointer;
+    /* Default: flipped to the left (hidden behind inside-right) */
+    transform: rotateY(-180deg);
 }
 
 /* --------------------------------------------------------------------------
@@ -475,9 +477,10 @@ body {
     transform: rotateY(180deg);
 }
 
-/* Show cover-back */
+/* Show cover-back - flip to visible (0deg) */
 .card-body.show-back .cover-back {
     z-index: 5;
+    transform: rotateY(0deg);
 }
 
 /* --------------------------------------------------------------------------
